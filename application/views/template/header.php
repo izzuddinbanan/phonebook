@@ -30,6 +30,7 @@
 					<ul class="nav navbar-nav">
 						<li><a href="<?php echo base_url();?>user">User</a></li>
 						<li><a href="<?php echo base_url();?>contact/contactpage">Contact</a></li>
+						<li><a href="<?php echo base_url();?>user/hobi">hobby</a></li>
 					</ul>
 			</div>
 

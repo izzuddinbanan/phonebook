@@ -107,4 +107,8 @@ class User extends CI_Controller {
 			
 		$this->load->view('profile_v', $data);
 	}
+	
+	public function hobi(){
+		$this->load->view('hobby_v');
+	}
 }

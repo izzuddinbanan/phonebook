@@ -14,11 +14,11 @@ class Home extends CI_Controller {
 	public function homepage() 
 	{ 
 		$data['query_list'] = $this->Contacts->view();
-		// ad($this->session->all_userdata()); exit;
 		$this->load->view('template/header');
 		$this->load->view('home', $data);
 		$this->load->view('template/footer');
 	}
+	
 	
 	
 }
