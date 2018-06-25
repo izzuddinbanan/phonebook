@@ -30,7 +30,7 @@ $this->load->view('template/header');
 				</div>
 				
 				<a href="<?php echo base_url();?>user/create_user"  class="btn btn-primary" >Add user</a>
-				<a href="<?php echo base_url();?>user/generate_pdf"  target="_blank" class="btn btn-success" ><span class="fa fa-file-pdf-o"></span>&nbsp; Download Pdf</a>
+				<a href="<?php echo base_url();?>user/generate_pdf"  target="_blank" class="btn btn-success" ><span class="fa fa-file-pdf-o"></span>&nbsp; Download PDF	</a>
 				<br /><br /><br />
 				<div class="table-responsive">
 					<table class="table table-striped table-bordered table-hover" id="dataTables-example">

@@ -7,6 +7,8 @@ class User extends CI_Controller {
 		parent::__construct();
 		user_validate();
 		
+		require('vendor/autoload.php');
+		require_once('vendor/spipu/html2pdf/src/Html2Pdf.php');
 		// Load model
 		$this->load->model('user_m');
 	}
@@ -113,6 +115,10 @@ class User extends CI_Controller {
 	}
 	
 	public function generate_pdf(){
-		
+		$result = $this->user_m->generate_pdf();
+		// ad($result);
+		$html2pdf = new Html2Pdf();
+		$html2pdf->writeHTML('<h1>HelloWorld</h1>This is my first test');
+		$html2pdf->output();
 	}
 }

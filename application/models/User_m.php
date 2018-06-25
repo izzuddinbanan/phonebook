@@ -167,6 +167,12 @@ class User_m extends CI_Model {
 		
 		set_message("Profile has been updated", "success");
 		return true;
+	}
 	
+	public function generate_pdf(){
+		$query_user = $this->db->query("SELECT * FROM `user`");
+		if($query_user->num_rows() > 0){
+			return $query_user->result();
+		}
 	}
 }
