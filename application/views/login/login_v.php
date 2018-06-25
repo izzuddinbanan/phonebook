@@ -34,11 +34,11 @@
 						   <br />
 							<div class="form-group input-group">
 								<span class="input-group-addon"><i class="fa fa-tag"  ></i></span>
-								<input type="text" name="username" class="form-control" placeholder="Your Username " />
+								<input type="text" name="username" class="form-control" placeholder="izzuddin" />
 							</div>
 							<div class="form-group input-group">
 								<span class="input-group-addon"><i class="fa fa-lock"  ></i></span>
-								<input type="password" name="password" class="form-control"  placeholder="Your Password" />
+								<input type="password" name="password" class="form-control"  placeholder="123123" />
 							</div>
 							<div class="form-group">
 								<span class="pull-right">

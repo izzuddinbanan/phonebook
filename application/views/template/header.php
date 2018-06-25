@@ -3,7 +3,6 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-				<title>CodeIgniter Tutorial</title>
 				
 				 <link href="<?php echo base_url(); ?>assets/css/bootstrap.css" rel="stylesheet" />
 				<!-- FONTAWESOME STYLES-->
@@ -12,7 +11,8 @@
 				<link href="<?php echo base_url(); ?>assets/css/custom.css" rel="stylesheet" />
 				<!-- GOOGLE FONTS-->
 				<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' /> 
-				
+				<link rel="shortcut icon" href="<?php echo base_url(); ?>assets/img/phone.ico"/>
+				<title>My PhoneBook</title>
 	</head>
 	<body>
 	<?php  $username = $this->session->userdata('username'); ?>
@@ -30,7 +30,7 @@
 					<ul class="nav navbar-nav">
 						<li><a href="<?php echo base_url();?>user">User</a></li>
 						<li><a href="<?php echo base_url();?>contact/contactpage">Contact</a></li>
-						<li><a href="<?php echo base_url();?>user/hobi">hobby</a></li>
+						<?php /* <li><a href="<?php echo base_url();?>user/hobi">Hobby</a></li> */ ?> 
 					</ul>
 			</div>
 
@@ -42,6 +42,7 @@
 						<ul class="dropdown-menu">
 							<li><a href="<?php echo base_url();?>user/profile">Update Profile</a></li>
 							<li><a href="<?php echo base_url();?>contact/change_pwd">Change Password</a></li>
+							<li><a href="<?php echo base_url();?>email/sendmail">Send Email</a></li>
 							<li role="separator" class="divider"></li>
 							<li><a href="<?php echo base_url();?>login/logout">Log Out</a></li>
 						</ul>

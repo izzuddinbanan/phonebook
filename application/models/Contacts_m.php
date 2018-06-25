@@ -107,12 +107,14 @@ class Contacts_m extends CI_Model {
 	public function edit_process($data)
 	{
 		$update = $this->db->query("UPDATE `contact` SET `phone` = " . $this->db->escape($data['phone']) . " , `address` = " . $this->db->escape($data['address']) . "WHERE `id` = ".$this->db->escape($data['id']));
+		
 		return true;
 	}
 	
 	public function remove_process($id)
 	{
 		$remove = $this->db->query("DELETE FROM `contact` WHERE `id` = " .$id);
+		
 		return true;
 	}
 	
@@ -124,8 +126,7 @@ class Contacts_m extends CI_Model {
 		$username =  $this->db->escape($this->session->userdata('username'));
 		
 		$check = $this->db->query("SELECT * FROM `user` WHERE `username` = " . $username . " AND `password` = " . $old);
-		
-		
+	
 		if($check->num_rows() > 0) 
 		{
 			if($confirm == $new) 

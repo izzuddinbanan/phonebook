@@ -29,7 +29,6 @@
 						<button type="submit" class="btn btn-primary">Submit</button>
 						<button type="reset" value="Reset" class="btn btn-default">Reset</button>
 					</form>
-					
 				</div>
 				
 				<a href="<?php echo base_url();?>contact/form_add"  class="btn btn-primary" >Add Contact</a>
@@ -38,6 +37,7 @@
 					<table class="table table-striped table-bordered table-hover" id="dataTables-example">
 						<thead>
 							<tr>
+								<th>No</th>
 								<th class="col-sort<?php echo isset($query_search['sort-column']) && $query_search['sort-column'] == "name" ? '-'. $query_search['sort-type'] : '' ?> " data-column="name">Name </th>
 								<th class="col-sort<?php echo isset($query_search['sort-column']) && $query_search['sort-column'] == "phone" ? '-'. $query_search['sort-type'] : '' ?> " data-column="phone">Phone Number </th>
 								<th class="col-sort<?php echo isset($query_search['sort-column']) && $query_search['sort-column'] == "address" ? '-'. $query_search['sort-type'] : '' ?> " data-column="address">address </th>
@@ -46,10 +46,12 @@
 						</thead>
 						<tbody>
 						<?php
+						$i=1;
 						if($query_list->num_rows() > 0) {
 						foreach($query_list->result() as $list) {?>
 					   
 							<tr>
+								<td><?php echo $i; ?></td>
 								<td><?php echo $list->name;?></td>
 								<td><?php echo $list->phone; ?></td>
 								<td><?php echo $list->address; ?></td>
@@ -59,6 +61,7 @@
 							</tr>
 						
 						<?php 
+							$i++;
 							}
 						} 
 						else {	

@@ -55,7 +55,7 @@ class Login extends CI_Controller {
 	
 	public function logout()
 	{
-		$a = $this->session->unset_userdata(array(
+		$this->session->unset_userdata(array(
 					'user_id' ,
 					'username' ,
 					'email',

@@ -34,7 +34,8 @@ $this->load->view('template/header');
 				<div class="table-responsive">
 					<table class="table table-striped table-bordered table-hover" id="dataTables-example">
 						<thead>
-							<tr><th>Profile Picture</th>
+							<tr>
+								<th>No </th>
 								<th class="col-sort<?php echo isset($search['sort_column']) && $search['sort_column'] == 'username' ? '-' . $search['sort_type'] : ''; ?>" data-column="username">Name </th>
 								<th class="col-sort<?php echo isset($search['sort_column']) && $search['sort_column'] == 'email' ? '-' . $search['sort_type'] : ''; ?>" data-column="email">Email</th>
 								<th class="col-sort<?php echo isset($search['sort_column']) && $search['sort_column'] == 'user_type' ? '-' . $search['sort_type'] : ''; ?>" data-column="user_type">User Type</th>
@@ -43,11 +44,12 @@ $this->load->view('template/header');
 						</thead>
 						<tbody>
 						<?php 
+						$i = 1;
 						if($listing->num_rows() > 0){
 							foreach($listing->result() as $list) {
 						?>
 							<tr>
-								<td> <img src="<?php echo base_url();?>upload/<?php echo $list->image == "" ? "blank.png" : $list->image  ?>" style="display: block; margin-left: auto; margin-right: auto;" width="100" height="100"></td>
+								<td><?php echo $i;?></td>
 								<td><?php echo $list->username; ?></td>
 								<td><?php echo $list->email; ?></td>
 								<td><?php echo $list->user_type; ?></td>
@@ -56,6 +58,7 @@ $this->load->view('template/header');
 								</td>
 							</tr>
 						<?php 
+							$i++;
 							}
 						}
 						else {

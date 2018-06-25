@@ -1,6 +1,4 @@
-<?php
-$this->load->view('template/header');
-?>
+<?php $this->load->view('template/header'); ?>
 
 <div class="row">
 	<div class="col-md-12">
@@ -42,11 +40,10 @@ $this->load->view('template/header');
 			$('table tbody').append(row);
 		});
 		
-		$('#remove').on('click',function(){
-			$(this).parent('tr').remove();
+		$('#remove').live('click',function(){
+			$(this).parent().parent().remove();
 		});
 	});
-
 </script>
 
 

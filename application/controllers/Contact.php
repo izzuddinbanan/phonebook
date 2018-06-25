@@ -62,6 +62,11 @@ class Contact extends CI_Controller {
 	#show current data to update form
 	public function edit($id = NULL)
 	{
+		if($_POST) {
+			
+		
+		}
+		
 		$data['fetch'] = $this->contacts_m->edit($id);
 		
 		$this->load->view('template/header');
