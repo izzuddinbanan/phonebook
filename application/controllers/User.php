@@ -111,4 +111,8 @@ class User extends CI_Controller {
 	public function hobi(){
 		$this->load->view('hobby_v');
 	}
+	
+	public function generate_pdf(){
+		
+	}
 }
