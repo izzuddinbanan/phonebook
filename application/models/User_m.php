@@ -162,6 +162,12 @@ class User_m extends CI_Model {
 			}
 		}
 		
+		$hobby = array(
+			user_id => $this->session->userdata(),
+			user_id => $this->input->post,
+		);
+		
+		
 		$this->db->where('id', $this->session->userdata('user_id'));
 		$this->db->update('user', $db_user);
 		

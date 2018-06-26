@@ -72,6 +72,7 @@ class Email extends CI_Controller {
 					$data["message"] = "Error: " . $mail->ErrorInfo;
 				} else {
 					$data["message"] = "Message sent correctly!";
+					set_message('Email has been sent successfully', 'success');
 				}
 				
 				$this->load->view('user/send_email_v',$data);	

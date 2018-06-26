@@ -7,8 +7,8 @@ class User extends CI_Controller {
 		parent::__construct();
 		user_validate();
 		
-		require('vendor/autoload.php');
-		require_once('vendor/spipu/html2pdf/src/Html2Pdf.php');
+		require(APPPATH .'third_party/html2pdf/html2pdf.class.php');
+
 		// Load model
 		$this->load->model('user_m');
 	}
@@ -110,15 +110,45 @@ class User extends CI_Controller {
 		$this->load->view('profile_v', $data);
 	}
 	
-	public function hobi(){
-		$this->load->view('hobby_v');
-	}
 	
 	public function generate_pdf(){
 		$result = $this->user_m->generate_pdf();
-		// ad($result);
-		$html2pdf = new Html2Pdf();
-		$html2pdf->writeHTML('<h1>HelloWorld</h1>This is my first test');
-		$html2pdf->output();
+		$html2pdf = new HTML2PDF('P', 'A4', 'en', true, 'UTF-8');
+		$html2pdf->pdf->SetDisplayMode('fullpage');
+		// ad(base_url(). "upload/Naruto_newshot13.png"); exit;
+		// $content = '<img src="http://localhost/phonebook/upload/Naruto_newshot13.png" height="100" width="100">';
+		$content = '<img src="upload/Naruto_newshot13.png" height="100" width="100"> 
+					<H3> User List of My PhoneBook </h3>
+					<hr style="height: .3mm; background: #000; "><br><br><br>';
+		$content .= '
+				<table border="1px" style="width: 100%; ">
+					<tr> 
+						<td style="text-align: center;width=33%;"><b>Name</b></td>
+						<td style="text-align: center;width=33%;"><b>Email</b></td>
+						<td style="text-align: center;width=33%;"><b>User Type</b></td>
+					</tr>';
+		foreach($result as $row_result){
+		$content .= '
+					<tr>
+						<td>';
+		$content .= $row_result->username;
+		$content .= '	</td>
+						<td>';
+		$content .= $row_result->email != '' ? $row_result->email : 'N/A'; 				
+		$content .= '	</td>
+						<td> ';
+		$content .= $row_result->user_type != '' ? $row_result->user_type : 'N/A';
+		$content .= '	</td>
+					</tr>';
+			
+		}
+		$content .= '
+				</table>
+		';
+		
+		
+		$html2pdf->WriteHTML($content);
+		// $html2pdf->Output('test.pdf','D'); // force download pdf
+		$html2pdf->Output('test.pdf'); // display only
 	}
 }

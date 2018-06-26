@@ -29,7 +29,7 @@ $this->load->view('template/header');
 					</form>
 				</div>
 				
-				<a href="<?php echo base_url();?>user/create_user"  class="btn btn-primary" >Add user</a>
+				<a href="<?php echo base_url();?>user/create_user"  class="btn btn-primary" ><span class="fa fa-plus"></span>&nbsp;Add user</a>
 				<a href="<?php echo base_url();?>user/generate_pdf"  target="_blank" class="btn btn-success" ><span class="fa fa-file-pdf-o"></span>&nbsp; Download PDF	</a>
 				<br /><br /><br />
 				<div class="table-responsive">
@@ -54,8 +54,8 @@ $this->load->view('template/header');
 								<td><?php echo $list->username; ?></td>
 								<td><?php echo $list->email; ?></td>
 								<td><?php echo $list->user_type; ?></td>
-								<td><a href="<?php echo base_url('user/edit/' .$list->id);?>"  class="btn btn-primary">update</a>
-									<a href="<?php echo base_url('user/remove/' .$list->id);?>" class="btn btn-danger">delete</a> 
+								<td><a href="<?php echo base_url('user/edit/' .$list->id);?>"  class="btn btn-primary"><span class="fa fa-pencil"></span>&nbsp;update</a>
+									<a href="<?php echo base_url('user/remove/' .$list->id);?>" class="btn btn-danger"><span class="fa fa-remove"></span>&nbsp;delete</a> 
 								</td>
 							</tr>
 						<?php 
