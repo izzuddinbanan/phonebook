@@ -16,10 +16,10 @@
 				<textarea cols="50" rows="15" name="msg" id="msg" class="form-control" value="<?php echo isset($input['msg']) ? $input['msg'] : ''?>" ></textarea> <br>
 				
 				<label>File attachment </label>
-				<input id="file" name="files" type="file" />
+				<input id="file" name="files" type="file" multiple/>
 				
 				</div>
-				<input type="submit" value="Save" id="sendmail" name="submit" class="btn btn-primary "/> 
+				<input type="submit" value="Send Email" id="sendmail" name="submit" class="btn btn-primary "/> 
 				<br ><br ><br >
 			</form>
 		</div>

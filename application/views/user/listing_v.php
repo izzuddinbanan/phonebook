@@ -22,10 +22,10 @@ $this->load->view('template/header');
 				<div class="row">
 					<form class="navbar-form pull-right" method="POST" action="">
 						<div class="form-group">
-							<input type="text" name="search"  class="form-control" value="<?php echo isset($search['search']) ? $search['search'] : ''; ?>" placeholder="Search by Name">
+							<input type="text" name="search"  class="form-control" value="<?php echo isset($search['search']) ? $search['search'] : ''; ?>" placeholder=" Search by Name">
 						</div>
-						<button type="submit" class="btn btn-primary">Submit</button>
-						<button type="reset" class="btn btn-default">Reset</button>
+						<button type="submit" class="btn btn-primary"><span class="fa fa-search-plus"></span>&nbsp;Search</button>
+						<button type="reset" class="btn btn-default"><span class="fa fa-spinner"></span>&nbsp;Reset</button>
 					</form>
 				</div>
 				
@@ -34,7 +34,7 @@ $this->load->view('template/header');
 				<br /><br /><br />
 				<div class="table-responsive">
 					<table class="table table-striped table-bordered table-hover" id="dataTables-example">
-						<thead>
+						<thead style="background-color: lavender;">
 							<tr>
 								<th>No </th>
 								<th class="col-sort<?php echo isset($search['sort_column']) && $search['sort_column'] == 'username' ? '-' . $search['sort_type'] : ''; ?>" data-column="username">Name </th>
@@ -54,8 +54,8 @@ $this->load->view('template/header');
 								<td><?php echo $list->username; ?></td>
 								<td><?php echo $list->email; ?></td>
 								<td><?php echo $list->user_type; ?></td>
-								<td><a href="<?php echo base_url('user/edit/' .$list->id);?>"  class="btn btn-primary"><span class="fa fa-pencil"></span>&nbsp;update</a>
-									<a href="<?php echo base_url('user/remove/' .$list->id);?>" class="btn btn-danger"><span class="fa fa-remove"></span>&nbsp;delete</a> 
+								<td><a href="<?php echo base_url('user/edit/' .$list->id);?>"  class="btn btn-primary" title="Update User"><span class="fa fa-pencil"></span>&nbsp;update</a>
+									<a href="<?php echo base_url('user/remove/' .$list->id);?>" class="btn btn-danger" title="Delete User"><span class="fa fa-remove"></span>&nbsp;delete</a> 
 								</td>
 							</tr>
 						<?php 

@@ -97,6 +97,11 @@ class User extends CI_Controller {
 	public function profile()
 	{
 		$data['row_user'] = $this->user_m->get_user_details();
+		$query_hobby = $this->db->query("SELECT * FROM `user_hobby` WHERE `user_id` = ". $this->db->escape($this->session->userdata('user_id')));
+		if($query_hobby->num_rows() > 0){
+			$data['hobby'] = $query_hobby->result();
+		}
+		
 		#Check for post data
 		if($this->input->post()){
 			if($this->user_m->profile($this->input->post(), $_FILES)){
@@ -106,7 +111,7 @@ class User extends CI_Controller {
 				$data['row_user'] = (object)$this->input->post();
 			}
 		}
-			
+		
 		$this->load->view('profile_v', $data);
 	}
 	

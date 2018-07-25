@@ -26,22 +26,22 @@
 						<div class="form-group">
 							<input type="text" name="search"  class="form-control" value="<?php echo isset($query_search['search']) ? $query_search['search'] : ''; ?>" placeholder="Search by Name">
 						</div>
-						<button type="submit" class="btn btn-primary">Submit</button>
-						<button type="reset" value="Reset" class="btn btn-default">Reset</button>
+						<button type="submit" class="btn btn-primary"><span class="fa fa-search-plus"></span>&nbsp; Search</button>
+						<button type="reset" value="Reset" class="btn btn-default"><span class="fa fa-spinner"></span> &nbsp;Reset</button>
 					</form>
 				</div>
 				
-				<a href="<?php echo base_url();?>contact/form_add"  class="btn btn-primary" >Add Contact</a>
+				<a href="<?php echo base_url();?>contact/form_add"  class="btn btn-primary" ><span class="fa fa-plus"></span> &nbsp; Add Contact</a>
 				<br /><br /><br />
 				<div class="table-responsive">
 					<table class="table table-striped table-bordered table-hover" id="dataTables-example">
-						<thead>
+						<thead style="background-color: lavender;">
 							<tr>
-								<th>No</th>
+								<th style="width: 1%">No</th>
 								<th class="col-sort<?php echo isset($query_search['sort-column']) && $query_search['sort-column'] == "name" ? '-'. $query_search['sort-type'] : '' ?> " data-column="name">Name </th>
 								<th class="col-sort<?php echo isset($query_search['sort-column']) && $query_search['sort-column'] == "phone" ? '-'. $query_search['sort-type'] : '' ?> " data-column="phone">Phone Number </th>
 								<th class="col-sort<?php echo isset($query_search['sort-column']) && $query_search['sort-column'] == "address" ? '-'. $query_search['sort-type'] : '' ?> " data-column="address">address </th>
-								<th>Action</th>
+								<th style="width: 12%">Action</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -51,12 +51,12 @@
 						foreach($query_list->result() as $list) {?>
 					   
 							<tr>
-								<td><?php echo $i; ?></td>
+								<td style="text-align: center"><?php echo $i; ?></td>
 								<td><?php echo $list->name;?></td>
 								<td><?php echo $list->phone; ?></td>
 								<td><?php echo $list->address; ?></td>
-								<td><a href="<?php echo base_url('contact/edit/' .$list->id);?>"  class="btn btn-primary">update</a>
-									<a href="<?php echo base_url('contact/remove/' .$list->id);?>" class="btn btn-danger">delete</a> 
+								<td><a href="<?php echo base_url('contact/edit/' .$list->id);?>"  class="btn btn-primary"><span class="fa fa-pencil"></span>&nbsp;update</a>
+									<a href="<?php echo base_url('contact/remove/' .$list->id);?>" class="btn btn-danger"><span class="fa fa-remove"></span>&nbsp;delete</a> 
 								</td>
 							</tr>
 						

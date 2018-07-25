@@ -122,7 +122,7 @@ class User_m extends CI_Model {
 	}
 	
 	public function profile($data = array(), $file_data = array()){
-		
+		// ad($data['hobi']); exit;
 		$db_user = array(
 			'username' => trim($data['username']),
 			'email' => trim($data['email'])
@@ -162,11 +162,17 @@ class User_m extends CI_Model {
 			}
 		}
 		
-		$hobby = array(
-			user_id => $this->session->userdata(),
-			user_id => $this->input->post,
-		);
-		
+		if(is_array($data['hobi']) && sizeof($data['hobi']) > 0){
+			foreach($data['hobi'] as $myhobi){
+				
+				$hobby = array(
+				'user_id' => $this->session->userdata('user_id'),
+				'hobby' => $myhobi
+				);
+				
+				$this->db->insert('user_hobby', $hobby);
+			}
+		}
 		
 		$this->db->where('id', $this->session->userdata('user_id'));
 		$this->db->update('user', $db_user);

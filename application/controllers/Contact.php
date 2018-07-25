@@ -36,7 +36,7 @@ class Contact extends CI_Controller {
 		$data['query_list'] = $this->contacts_m->view($search);
 		$data['query_search'] = unserialize(base64url_decode($search));
 		$data['pagination'] = $this->pagination->create_links();
-		
+		ad($data['query_search']); 
 		$this->load->view('contact/contact_v', $data);
 	}
 	

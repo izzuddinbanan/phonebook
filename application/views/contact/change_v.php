@@ -10,17 +10,23 @@
 				<form role="form" method="POST" action="<?php echo base_url();?>contact/change_pwd">
 					<div class="form-group">
 						<label>Old Password</label>
-						<input type="password" name="old" class="form-control" /> <br/>
+						<input type="password" name="old" class="form-control" /> 
+					</div>
 						
+					<div class="form-group">
 						<label>New Password</label>
-						<input type="password" name="new" class="form-control"  /> <br/>
+						<input type="password" name="new" class="form-control"  /> 
+					</div>
 						
+					<div class="form-group">
 						<label>Confirm New Password</label>
-						<input type="password" name="confirm" class="form-control" /> <br/>
+						<input type="password" name="confirm" class="form-control" /> 
 					</div>
 					
-					<input type="submit" value="Save" name="submit" class="btn btn-primary "/>
-					<a href="<?php echo base_url(); ?>dashboard" class="btn btn-primary "/> Back </a>
+					<div class="form-group">
+						<input type="submit" value="Save" name="submit" class="btn btn-primary "/>
+						<a href="<?php echo base_url(); ?>dashboard" class="btn btn-primary "/> Back </a>
+					</div>
 				</form>
             </div>
         </div>
